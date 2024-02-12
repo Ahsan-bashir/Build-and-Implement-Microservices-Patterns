@@ -3,11 +3,11 @@ const supertest = require("supertest");
 
 const app = require("../index");
 
-// Mandatory test cases
-describe("Testing User API's Request", function () {
+//Mandatory Test cases
+describe("Testing User API's", function () {
 
     it("should return status 400 if request body is empty", function (done) {
-        supertest(app)       
+        supertest(app)
             .post("/api/v1/user/")
             .expect(400)
             .end((err, res) => {
@@ -17,8 +17,8 @@ describe("Testing User API's Request", function () {
 })
 
 // Optional Test cases
-describe("Testing User creation API's Request", function () {
-    
+describe("Testing User API's", function () {
+
     it("should return status 201 if user is created successfully", function (done) {
         const user = {
             email: "existinguser@gmail.com",
