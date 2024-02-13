@@ -1,10 +1,6 @@
 const User = require('../model/user')
 
-const addUser = async (req, res) => {
 
-    /**
-        Write the code to add the user details to the database
-    */
         const addUser = async (req, res) => {
             console.log("---- addUser function called ----");
         
@@ -28,7 +24,7 @@ const addUser = async (req, res) => {
                 res.status(500).send({ error: 'Internal Server Error' });
             }
         }
-}
+
 
 
 module.exports = addUser;

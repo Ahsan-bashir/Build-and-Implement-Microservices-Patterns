@@ -1,4 +1,4 @@
-require('./config/database').connect();
+// require('./config/database').connect();
 const express = require('express');
 const app = express();
 const port = 4001;
@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use('/api/v1/movie', movieRouter);
-app.use('/api/v1/user', userRouter);
+app.use('/api/v1/user/', userRouter);
 
 app.get('/', (req, res) => {
     res.send("User movie Service is running");
