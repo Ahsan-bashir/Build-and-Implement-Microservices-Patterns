@@ -23,7 +23,7 @@ a.	 UserProductService
     b.	Goto product.js file under the controller folder and implement the following code
         i.	Implement the code to get the product details inside getProducts method.
         ii.	Implement the code to add the product details inside addProduct method.
-        iii.Implement the code to delete the product details inside deleteProduct method.
+        iii.	Implement the code to delete the product details inside deleteProduct method.
 
     c.	Goto user.js file under the controller folder and implement the following code
         i.	Implement the code to add the user details inside addUser method.

@@ -7,7 +7,7 @@ const app = require("../index");
 describe("Testing User API's Request", function () {
 
     it("should return status 400 if request body is empty", function (done) {
-        supertest(app)       
+        supertest(app)
             .post("/api/v1/user/")
             .expect(400)
             .end((err, res) => {

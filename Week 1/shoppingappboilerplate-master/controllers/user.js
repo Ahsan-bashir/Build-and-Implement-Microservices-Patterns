@@ -1,24 +1,27 @@
 const User = require('../model/user')
 
 const addUser = async (req, res) => {
-    // Write the code to add the user
-   
+    console.log("---- addUser function called ----");
 
+    if (!req.body) {
+        console.log("---- Request body is empty ----");
+        return res.status(400).send({ error: 'Request body is empty' });
+    }
 
+    if (!req.body.user) {
+        console.log("---- User data is missing in request body ----");
+        return res.status(400).send({ error: 'User data is missing in request body' });
+    }
 
-    // try {
-    //     const user = new User(req.body);
-    //     console.log("---------not savees---------");
-    //     await user.save();
-    //     console.log("--------- savees---------");
-    //     res.status(201).send(user);
-    // } catch (error) {
-    //     res.status(400).send(error);
-    // }
-
-    // if (Object.keys(req.body).length === 0) {
-    //     return res.status(400).send('Request body is empty');
-    // }
+    try {
+        const user = new User(req.body.user);
+        await user.save();
+        console.log("---- User created successfully ----");
+        res.status(201).send({ message: 'User created successfully' });
+    } catch (err) {
+        console.error("---- Error occurred while creating user ----", err);
+        res.status(500).send({ error: 'Internal Server Error' });
+    }
 }
 
 module.exports = addUser;

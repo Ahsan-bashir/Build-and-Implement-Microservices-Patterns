@@ -35,7 +35,7 @@ describe("Testing Product API's Request", function () {
     });
 })
 
-// Optional test cases
+// Optional test  cases
 describe("Testing User API's", function () {
 
     it("should return status 200 for existing user", function (done) {
